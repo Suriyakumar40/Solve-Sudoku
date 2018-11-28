@@ -1,18 +1,19 @@
 import { NgModule, PLATFORM_ID, APP_ID, Inject } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
-
 import { AppComponent } from './app.component';
+import { SharedModule } from './shared/shared.module';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   imports: [
-    BrowserModule.withServerTransition({ appId: 'sudoku' }),
-    FormsModule,
+    BrowserModule.withServerTransition({ appId: 'solve-puzzle' }),
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule,
+    CoreModule
   ],
   declarations: [
     AppComponent,

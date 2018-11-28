@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular.io-example": {
+    "solve-puzzle": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -46,7 +46,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -73,20 +73,20 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular.io-example:build",
+            "browserTarget": "solve-puzzle:build",
             "port": 3000,
             "open": true
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular.io-example:build:production"
+              "browserTarget": "solve-puzzle:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular.io-example:build"
+            "browserTarget": "solve-puzzle:build"
           }
         },
         "test": {
@@ -97,7 +97,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": [],
             "assets": [
@@ -128,7 +128,7 @@
         }
       }
     },
-    "angular.io-example-e2e": {
+    "solve-puzzle-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -137,11 +137,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular.io-example:serve"
+            "devServerTarget": "solve-puzzle:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular.io-example:serve:production"
+              "devServerTarget": "solve-puzzle:serve:production"
             }
           }
         },
@@ -157,5 +157,5 @@
       }
     }
   },
-  "defaultProject": "angular.io-example"
+  "defaultProject": "solve-puzzle"
 }
