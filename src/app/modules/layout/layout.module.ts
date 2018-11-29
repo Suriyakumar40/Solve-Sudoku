@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { LayoutComponent } from './layout.component';
+import { LayoutRoutingModule } from './layout-routing.module';
 
 @NgModule({
   imports: [
+    LayoutRoutingModule
   ],
   declarations: [
     LayoutComponent
@@ -11,5 +13,5 @@ import { LayoutComponent } from './layout.component';
   ]
 })
 
-export class SolveNQueenModule {
+export class LayoutModule {
 }
