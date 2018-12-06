@@ -5,7 +5,8 @@ import { SolveNQueenComponent } from './solve-n-queen.component';
 const routes: Routes = [
   {
     path: '',
-    component: SolveNQueenComponent
+    component: SolveNQueenComponent,
+    pathMatch: 'full'
   }
 ];
 

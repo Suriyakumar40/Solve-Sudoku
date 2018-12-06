@@ -4,16 +4,14 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SharedModule } from './shared/shared.module';
-import { CoreModule } from './core/core.module';
+import { LayoutModule } from './modules/layout/layout.module';
 
 @NgModule({
   imports: [
     BrowserModule.withServerTransition({ appId: 'solve-puzzle' }),
     AppRoutingModule,
     HttpClientModule,
-    SharedModule,
-    CoreModule
+    LayoutModule
   ],
   declarations: [
     AppComponent,
