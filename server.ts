@@ -5,13 +5,20 @@ import 'reflect-metadata';
 import { enableProdMode } from '@angular/core';
 
 import * as express from 'express';
+import * as dotenv from 'dotenv';
 import { join } from 'path';
+
+// load dotenv for rendering enviorment file in server.ts file
+dotenv.load();
 
 // Faster server renders w/ Prod mode (dev mode never needed)
 enableProdMode();
 
 // Express server
 const app = express();
+
+
+console.log(' process.env',  process.env);
 
 const PORT = process.env.APPLICATION_RUNNING_PORT || 4000;
 const DIST_FOLDER = join(process.cwd(), 'dist');
