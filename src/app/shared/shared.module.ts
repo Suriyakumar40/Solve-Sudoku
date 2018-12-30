@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { NumberToArrayPipe } from './pipes/number-to-array.pipe';
 
 @NgModule({
     imports: [
@@ -8,10 +9,12 @@ import { FormsModule } from '@angular/forms';
         FormsModule
     ],
     declarations: [
+        NumberToArrayPipe
     ],
     exports: [
         CommonModule,
-        FormsModule
+        FormsModule,
+        NumberToArrayPipe
     ],
 })
 

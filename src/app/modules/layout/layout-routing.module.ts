@@ -3,8 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'solve-n-queen',
-    loadChildren: './../solve-n-queen/solve-n-queen.module#SolveNQueenModule',
+    path: '',
+    redirectTo: 'n-queen',
+    pathMatch: 'full'
+  },
+  {
+    path: 'n-queen',
+    loadChildren: './../n-queen/solve-n-queen.module#SolveNQueenModule',
   },
   {
     path: 'page-not-found',

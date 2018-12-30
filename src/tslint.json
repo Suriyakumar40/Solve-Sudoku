@@ -12,6 +12,8 @@
             "element",
             "app",
             "kebab-case"
-        ]
+        ],
+        "no-console": [false, "log", "error"],
+        "no-debugger" : [true]
     }
 }

@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'puzzle/solve-n-queen',
+    redirectTo: 'puzzle/n-queen',
     pathMatch: 'full'
   },
   {
