@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {
+  CdkDragDrop, moveItemInArray, transferArrayItem,
+  CdkDragEnter, CdkDragExit, CdkDragStart, CdkDrag, CdkDropList
+} from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-create-queen',
@@ -8,7 +12,7 @@ import { Router } from '@angular/router';
 })
 
 export class CreateNQueenComponent implements OnInit {
-  public inputGrid: Array<Array<any>> = new Array<any>();
+  public inputGrid: Array<Array<number | ''>>;
   public sizeOfSudoku: number;
   public sqrt: number;
 
@@ -16,20 +20,33 @@ export class CreateNQueenComponent implements OnInit {
   }
 
   async ngOnInit() {
-    // this.inputGrid = [[0, 2, 0, 1], [1, 0, 0, 4], [0, 4, 0, 3], [3, 0, 4, 0]];
-    // this.inputGrid = [[0, 0, 0, 0], [4, 0, 2, 0], [0, 2, 0, 1], [0, 0, 0, 0]];
-    this.inputGrid = [
-      [3, 0, 6, 5, 0, 8, 4, 0, 0],
-      [5, 2, 0, 0, 0, 0, 0, 0, 0],
-      [0, 8, 7, 0, 0, 0, 0, 3, 1],
-      [0, 0, 3, 0, 1, 0, 0, 8, 0],
-      [9, 0, 0, 8, 6, 3, 0, 0, 5],
-      [0, 5, 0, 0, 9, 0, 6, 0, 0],
-      [1, 3, 0, 0, 0, 0, 2, 5, 0],
-      [0, 0, 0, 0, 0, 0, 0, 7, 4],
-      [0, 0, 5, 2, 0, 6, 3, 0, 0]
-    ];
-    this.sizeOfSudoku = this.inputGrid ? this.inputGrid.length : 0;
+    this.sizeOfSudoku = 4;
     this.sqrt = Math.sqrt(this.sizeOfSudoku);
+    this.inputGrid = await this.createEmptyInputGrid();
+  }
+
+  public createEmptyInputGrid(): Array<Array<number>> {
+    const row = new Array<Array<number>>();
+    for (let i = 0; i < this.sizeOfSudoku; i++) {
+      const column = [];
+      for (let j = 0; j < this.sizeOfSudoku; j++) {
+        column.push(0);
+      }
+      row.push(column);
+    }
+    return row;
+  }
+
+  columnChange(rIndex, colIndex, col) {
+    this.inputGrid[rIndex][colIndex] = col ? parseInt(col, null) : '';
+    this.inputGrid = this.refreshModel();
+  }
+
+  refreshModel() {
+    return this.inputGrid.map(row => {
+      return row.map(item => {
+        return item;
+      });
+    });
   }
 }
